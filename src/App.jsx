@@ -19,13 +19,13 @@ const App = () => {
   const deleteItem = (id) => {
     setItems((oldItems)=>{
       return oldItems.filter((arrElement,index)=>{
-        return index != id;
+        return index !== id;
       })
     })
-
-
-
   };
+  const clearAll = () =>{
+    setItems([]);
+  }
 
   return (
     <div className="wrapper">
@@ -58,7 +58,7 @@ const App = () => {
         <span>
           You have <span className="pendingTasks"></span> pending tasks
         </span>
-        <button>Clear All</button>
+        <button onClick={clearAll}>Clear All</button>
       </div>
     </div>
   );
